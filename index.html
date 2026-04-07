@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LandChain</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000000, #0f172a);
+  color: white;
+}
+
+/* TITLE */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #00f5ff;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.1);
+}
+
+/* BUTTON */
+button {
+  background: #00f5ff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+}
+td, th {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<h1>🏡 LandChain Blockchain Startup</h1>
+
+<div class="grid">
+
+<div class="card">
+<h2>Startup</h2>
+<p><b>Problem:</b> Land fraud</p>
+<p><b>Solution:</b> Blockchain registry</p>
+<p><b>Actors:</b> Govt, Buyer, Seller</p>
+</div>
+
+<div class="card">
+<h2>Blockchain Flow</h2>
+<table>
+<tr><th>Block</th><th>Actor</th><th>Action</th></tr>
+<tr><td>1</td><td>Govt</td><td>Register</td></tr>
+<tr><td>2</td><td>Seller</td><td>List</td></tr>
+<tr><td>3</td><td>Buyer</td><td>Request</td></tr>
+<tr><td>4</td><td>Registrar</td><td>Approve</td></tr>
+<tr><td>5</td><td>System</td><td>Update</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>Token</h2>
+<p>LandCoin rewards users for verified transactions</p>
+</div>
+
+<div class="card">
+<h2>Simulation</h2>
+<button onclick="addBlock()">Add Block</button>
+<div id="chain"></div>
+</div>
+
+</div>
+
+<script>
+let chain = [];
+
+function addBlock(){
+  let block = "Block " + (chain.length+1);
+  chain.push(block);
+  document.getElementById("chain").innerHTML += "<p>"+block+"</p>";
+}
+</script>
+
+</body>
+</html>
